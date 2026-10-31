@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#5fbf2a">
+    <meta name="description" content="Explore uma simulação do canteiro conectado Jardim Smart, com sensor de umidade, irrigação e dados de cuidado.">
+    <title>Demonstração | Jardim Smart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="demonstracao.js" defer></script>
+  </head>
+  <body class="demo-page">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Jardim Smart, página inicial">
+        <span class="brand-mark" aria-hidden="true">🌱</span>
+        <span>Jardim <em>Smart</em></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html#ideia">A ideia</a>
+        <a href="#componentes">Componentes</a>
+        <a href="#como-usar">Como usar</a>
+      </nav>
+      <a class="header-cta" href="index.html"><span class="demo-header-full">Voltar ao início</span><span class="demo-header-short">Início</span> <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="demo-hero section-wrap">
+        <div class="demo-hero-copy">
+          <p class="eyebrow"><span class="sun-dot" aria-hidden="true"></span> Jardim Smart · laboratório de ideias</p>
+          <h1>Um canteiro<br><span>que conversa.</span></h1>
+          <p>Veja como um sensor de umidade pode orientar a irrigação e transformar as condições da planta em informações simples de acompanhar.</p>
+          <a class="button button-green" href="#canteiro">Explorar o canteiro <span aria-hidden="true">↓</span></a>
+        </div>
+        <aside class="demo-note" aria-label="Aviso sobre a demonstração">
+          <span aria-hidden="true">🧪</span>
+          <div><strong>Simulação interativa</strong><p>Os sensores, valores e a irrigação são ilustrativos. Nenhum hardware está conectado.</p></div>
+        </aside>
+      </section>
+
+      <section class="demo-dashboard" id="canteiro" aria-labelledby="bed-title">
+        <div class="section-wrap">
+          <div class="demo-section-heading">
+            <div>
+              <p class="eyebrow"><span class="sun-dot" aria-hidden="true"></span> Simulação do sistema conectado</p>
+              <h2 id="bed-title">Manjericão · canteiro 01</h2>
+            </div>
+            <span class="demo-live"><i aria-hidden="true"></i> DADOS DE EXEMPLO</span>
+          </div>
+          <div class="demo-toolbar">
+            <label class="plant-picker" for="demo-plant-select"><span>🌿</span><span><strong>Planta do canteiro</strong><small>Troque para ver recomendações diferentes</small></span>
+              <select id="demo-plant-select" aria-label="Escolher planta da simulação">
+                <option value="manjericao">Manjericão</option>
+                <option value="orquidea">Orquídea</option>
+                <option value="jiboia">Jiboia</option>
+                <option value="suculenta">Suculenta</option>
+                <option value="samambaia">Samambaia</option>
+                <option value="espada">Espada-de-são-jorge</option>
+                <option value="lirio">Lírio-da-paz</option>
+                <option value="cacto">Cacto</option>
+                <option value="costela">Costela-de-adão</option>
+              </select>
+            </label>
+            <div class="view-switch" role="group" aria-label="Visualização da simulação">
+              <span>Visualizar como</span>
+              <button type="button" class="view-option is-selected" data-preview="desktop" aria-pressed="true"><span aria-hidden="true">🖥️</span> Desktop</button>
+              <button type="button" class="view-option" data-preview="mobile" aria-pressed="false"><span aria-hidden="true">📱</span> Celular</button>
+            </div>
+          </div>
+
+          <div class="demo-dashboard-grid" id="demo-preview" data-preview="desktop">
+            <section class="bed-card" aria-label="Ilustração 2.5D de um canteiro com sensor e irrigação">
+              <div class="bed-card-top"><span>VISTA DO SISTEMA</span><span id="bed-location">01 · VARANDA</span></div>
+              <div class="bed-illustration">
+                <svg class="bed-svg" viewBox="0 0 760 510" role="img" aria-labelledby="bed-illustration-title bed-illustration-description">
+                  <title id="bed-illustration-title">Canteiro conectado Jardim Smart</title>
+                  <desc id="bed-illustration-description">Planta crescendo sobre o solo, com um tubo de irrigação acima e uma sonda de umidade enterrada na terra.</desc>
+                  <defs>
+                    <linearGradient id="soil-top" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#b97842"/><stop offset="1" stop-color="#88502f"/></linearGradient>
+                    <linearGradient id="soil-side" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8f522f"/><stop offset="1" stop-color="#63391f"/></linearGradient>
+                    <filter id="bed-shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#3e2b1e" flood-opacity=".15"/></filter>
+                  </defs>
+                  <g class="bed-ground" filter="url(#bed-shadow)">
+                    <path d="M92 276 374 137 666 277 381 420Z" fill="url(#soil-top)" stroke="#5a2e12" stroke-width="8" stroke-linejoin="round"/>
+                    <path d="M92 276 381 420 381 468 92 320Z" fill="#9a6037" stroke="#5a2e12" stroke-width="8" stroke-linejoin="round"/>
+                    <path d="M381 420 666 277 666 321 381 468Z" fill="url(#soil-side)" stroke="#5a2e12" stroke-width="8" stroke-linejoin="round"/>
+                    <path d="M111 279 375 151 646 279 381 409Z" fill="none" stroke="#d49a5e" stroke-width="3" opacity=".8"/>
+                  </g>
+                  <g class="bed-soil-details" fill="#e1ae76" opacity=".66">
+                    <ellipse cx="198" cy="290" rx="8" ry="4" transform="rotate(27 198 290)"/><ellipse cx="257" cy="326" rx="7" ry="4" transform="rotate(27 257 326)"/>
+                    <ellipse cx="543" cy="294" rx="8" ry="4" transform="rotate(-27 543 294)"/><ellipse cx="481" cy="337" rx="7" ry="4" transform="rotate(-27 481 337)"/>
+                    <ellipse cx="338" cy="373" rx="7" ry="4"/><ellipse cx="420" cy="244" rx="7" ry="4"/>
+                  </g>
+                  <g class="plant">
+                    <path d="M379 274C377 244 387 219 380 184M380 232C358 214 344 201 334 178M382 218C406 202 420 185 427 163M379 250C353 244 334 233 317 217M383 241C410 235 434 219 449 201" fill="none" stroke="#315f2d" stroke-width="9" stroke-linecap="round"/>
+                    <path d="M374 214C337 217 316 200 319 177 345 170 369 182 374 214Z" fill="#64a943" stroke="#315f2d" stroke-width="4"/>
+                    <path d="M384 198C385 166 410 150 434 157 435 181 414 199 384 198Z" fill="#76b950" stroke="#315f2d" stroke-width="4"/>
+                    <path d="M381 238C353 262 326 255 315 236 329 215 354 216 381 238Z" fill="#5a9e3b" stroke="#315f2d" stroke-width="4"/>
+                    <path d="M387 227C411 199 440 201 452 220 438 242 414 245 387 227Z" fill="#70ae48" stroke="#315f2d" stroke-width="4"/>
+                    <path d="M380 185C356 163 358 138 377 126 397 140 397 162 380 185Z" fill="#83bd52" stroke="#315f2d" stroke-width="4"/>
+                    <path d="M372 264 380 275 389 264" fill="none" stroke="#d6a165" stroke-width="6" stroke-linecap="round"/>
+                  </g>
+                  <g class="irrigation-line">
+                    <path d="M239 111H489Q509 111 509 131V160" fill="none" stroke="#4f89a1" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="water-flow" d="M239 111H489Q509 111 509 131V160" fill="none" stroke="#d7f4ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M492 160H526" stroke="#4f89a1" stroke-width="12" stroke-linecap="round"/>
+                    <path class="water-drop drop-one" d="M511 178C511 178 502 190 502 197A9 9 0 0 0 520 197C520 190 511 178 511 178Z" fill="#50b8dc"/>
+                    <path class="water-drop drop-two" d="M535 184C535 184 529 192 529 198A7 7 0 0 0 543 198C543 192 535 184 535 184Z" fill="#50b8dc"/>
+                  </g>
+                  <g class="soil-sensor">
+                    <path d="M305 316 329 328 329 379 305 367Z" fill="#d2e8b3" stroke="#315f2d" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M311 329 323 335M311 340 323 346M311 351 323 357" stroke="#5fbf2a" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M317 378V400" stroke="#d9e3c2" stroke-width="7" stroke-linecap="round"/>
+                    <circle cx="317" cy="407" r="7" fill="#ffc933" stroke="#5a2e12" stroke-width="3"/>
+                    <path d="M330 335 365 318" fill="none" stroke="#d9e3c2" stroke-width="4" stroke-dasharray="5 6"/>
+                  </g>
+                  <g class="sensor-signal" fill="none" stroke="#5fbf2a" stroke-width="4" stroke-linecap="round">
+                    <path d="M342 302Q358 317 342 332"/><path d="M354 294Q377 317 354 340"/>
+                  </g>
+                  <g class="controller-board" aria-hidden="true">
+                    <path d="M568 360 608 340 647 359 607 380Z" fill="#22733c" stroke="#244b2c" stroke-width="4"/>
+                    <path d="M579 359 592 352 604 358 591 365Z" fill="#c6d6aa" stroke="#244b2c" stroke-width="2"/>
+                    <path d="M610 371 638 357" stroke="#e5c773" stroke-width="3" stroke-dasharray="4 4"/>
+                    <circle cx="622" cy="355" r="4" fill="#ffc933"/>
+                  </g>
+                </svg>
+                <button class="diagram-label label-irrigation component-hotspot" type="button" data-component="bomba"><span aria-hidden="true">💧</span><span><strong>Irrigação</strong><small>Gotejamento controlado</small></span></button>
+                <button class="diagram-label label-sensor component-hotspot" type="button" data-component="solo"><span aria-hidden="true">📡</span><span><strong>Sensor no solo</strong><small>Lê a umidade da terra</small></span></button>
+                <button class="diagram-label label-controller component-hotspot" type="button" data-component="solo" aria-label="Explorar sensor"><span aria-hidden="true">📡</span><span><strong>Explorar sensor</strong></span></button>
+                <div class="diagram-plant-label"><span id="plant-emoji">🌿</span> <span id="plant-diagram-name">Manjericão</span></div>
+              </div>
+              <div class="bed-card-bottom"><span><i class="legend-sensor"></i> Sensores</span><span><i class="legend-irrigation"></i> Água</span><span><i class="legend-board"></i> Controladora</span></div>
+            </section>
+
+            <section class="telemetry-card" aria-labelledby="telemetry-title">
+              <div class="telemetry-heading">
+                <div><p class="eyebrow">LEITURA DO CANTEIRO</p><h3 id="telemetry-title">Agora por aqui</h3></div>
+                <span class="telemetry-weather" aria-label="Clima ilustrativo">☀️ <span id="air-temperature">24,6</span>°</span>
+              </div>
+              <div class="moisture-reading">
+                <div class="moisture-reading-top"><span>Umidade do solo</span><strong><span id="soil-moisture-value">34</span><small>%</small></strong></div>
+                <div class="moisture-track" role="progressbar" aria-label="Umidade ilustrativa do solo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="34"><span id="moisture-bar"></span></div>
+                <p id="soil-moisture-status" class="moisture-status">Solo seco · pode precisar de água</p>
+              </div>
+              <div class="telemetry-metrics">
+                <article class="telemetry-metric"><span class="metric-icon metric-temp" aria-hidden="true">🌡️</span><div><small>Temperatura do ar</small><strong><span id="temperature-value">24,6</span> <em>°C</em></strong></div></article>
+                <article class="telemetry-metric"><span class="metric-icon metric-soil-temp" aria-hidden="true">🌡️</span><div><small>Temperatura do solo</small><strong><span id="soil-temperature-value">22,1</span> <em>°C</em></strong></div></article>
+                <article class="telemetry-metric"><span class="metric-icon metric-humidity" aria-hidden="true">🌫️</span><div><small>Umidade do ar</small><strong><span id="air-humidity-value">58</span> <em>%</em></strong></div></article>
+                <article class="telemetry-metric"><span class="metric-icon metric-water" aria-hidden="true">💧</span><div><small>Água hoje</small><strong><span id="water-usage">0,00</span> <em>L</em></strong></div></article>
+                <article class="telemetry-metric"><span class="metric-icon metric-status" aria-hidden="true">🪴</span><div><small>Status da rega</small><strong id="watering-status">Ainda não regada</strong></div></article>
+                <article class="telemetry-metric"><span class="metric-icon metric-signal" aria-hidden="true">📶</span><div><small>Sensor</small><strong><span class="sensor-dot"></span> Simulado</strong></div></article>
+              </div>
+              <div class="irrigation-status" id="irrigation-status" aria-live="polite">
+                <span class="irrigation-status-icon" aria-hidden="true">💧</span>
+                <div><strong id="irrigation-status-title">Irrigação em espera</strong><small id="irrigation-status-copy">Abaixo de 38% de umidade, o sistema pode sugerir rega.</small></div>
+              </div>
+              <div class="demo-controls">
+                <button class="button button-green" id="water-now-button" type="button">Simular rega <span aria-hidden="true">→</span></button>
+                <button class="automation-toggle" id="automation-toggle" type="button" aria-pressed="false"><span class="toggle-track"><span></span></span><span><strong>Modo automático</strong><small id="automation-description">Desativado · controle manual</small></span></button>
+              </div>
+              <div class="plant-action-buttons">
+                <button class="plant-action-button" id="open-plant-details" type="button">🌿 Detalhes da planta</button>
+                <button class="plant-action-button" id="open-watering-calendar" type="button">🗓️ Calendário de rega</button>
+              </div>
+              <p class="plant-care-copy" id="plant-care-copy">Manjericão gosta de substrato levemente úmido e boa luminosidade.</p>
+              <p class="telemetry-footnote">Leituras de exemplo. A rega é simulada; temperatura do ar e do solo diminuem apenas para ilustrar a mudança após irrigar.</p>
+            </section>
+          </div>
+
+          <section class="system-map" id="componentes" aria-labelledby="components-title">
+            <div class="system-map-heading">
+              <div><p class="eyebrow"><span class="sun-dot" aria-hidden="true"></span> Dentro da placa</p><h3 id="components-title">Quem faz o quê no sistema?</h3></div>
+              <p>Selecione um componente — inclusive a Raspberry Pi — para entender sua função, por que está no projeto e como se conecta.</p>
+            </div>
+            <div class="component-layout">
+              <div class="component-selector" role="group" aria-label="Componentes do sistema">
+                <button class="component-chip is-active" type="button" data-component="raspberry" aria-pressed="true"><span>🟩</span><span><strong>Raspberry Pi Pico W</strong><small>Controladora</small></span><b>→</b></button>
+                <button class="component-chip" type="button" data-component="solo" aria-pressed="false"><span>🌱</span><span><strong>Sensor capacitivo</strong><small>Umidade do solo</small></span><b>→</b></button>
+                <button class="component-chip" type="button" data-component="ambiente" aria-pressed="false"><span>🌡️</span><span><strong>DHT22</strong><small>Temperatura e ar</small></span><b>→</b></button>
+                <button class="component-chip" type="button" data-component="rele" aria-pressed="false"><span>🔌</span><span><strong>Módulo relé</strong><small>Acionamento isolado</small></span><b>→</b></button>
+                <button class="component-chip" type="button" data-component="bomba" aria-pressed="false"><span>🚿</span><span><strong>Bomba + gotejador</strong><small>Fluxo de água</small></span><b>→</b></button>
+                <button class="component-chip" type="button" data-component="fonte" aria-pressed="false"><span>🔋</span><span><strong>Fonte externa</strong><small>Energia da bomba</small></span><b>→</b></button>
+              </div>
+              <article class="component-detail" aria-live="polite">
+                <div class="component-detail-icon" id="component-detail-icon" aria-hidden="true">🟩</div>
+                <p class="eyebrow" id="component-category">CONTROLADORA</p>
+                <h4 id="component-detail-title">Raspberry Pi Pico W</h4>
+                <p id="component-detail-description">É o pequeno computador do canteiro: lê os sensores, aplica a regra de cuidado escolhida e envia o comando para a irrigação. O Wi‑Fi pode futuramente levar as leituras a um painel.</p>
+                <div class="component-why"><strong>Por que está aqui?</strong><p id="component-detail-why">Centraliza a lógica em um lugar programável e de baixo consumo; assim, sensores e acionamentos trabalham seguindo a mesma regra.</p></div>
+                <div class="component-connection"><strong>Ligação de referência</strong><p id="component-detail-connection">Recebe o sensor de solo em ADC0/GP26 e o DHT22 em GP15; comanda a entrada IN do relé por GP16. Compartilha o GND do circuito de controle.</p></div>
+              </article>
+            </div>
+            <div class="wiring-flow" aria-label="Fluxo ilustrativo das conexões">
+              <span><i>01</i> Sensores medem</span><b aria-hidden="true">→</b><span><i>02</i> Pico W interpreta</span><b aria-hidden="true">→</b><span><i>03</i> Relé comanda</span><b aria-hidden="true">→</b><span><i>04</i> Bomba irriga</span>
+            </div>
+            <p class="wiring-warning"><strong>Segurança:</strong> é um diagrama conceitual, não um esquema pronto para montagem. Bomba e relé exigem alimentação e dimensionamento próprios; não conecte motor diretamente aos pinos da placa. Confirme tensões, corrente, proteção e isolamento antes de montar hardware real.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="demo-usage section-wrap" id="como-usar">
+        <div class="demo-usage-heading">
+          <p class="eyebrow"><span class="sun-dot" aria-hidden="true"></span> Do dado ao cuidado</p>
+          <h2>Como esse sistema<br><span>pode ajudar.</span></h2>
+          <p>O Jardim Smart aproxima o que a planta precisa de uma rotina fácil de entender. O canteiro mostra como sensores, uma placa de controle e a irrigação podem trabalhar juntos sem esconder o que acontece.</p>
+        </div>
+        <div class="demo-usage-steps">
+          <article><span>01</span><div><strong>A planta define o contexto</strong><p>Espécie e ambiente ajudam a escolher quais sinais observar e que faixa usar como referência.</p></div></article>
+          <article><span>02</span><div><strong>Os sensores trazem pistas</strong><p>A umidade do solo indica a condição perto das raízes; temperatura e umidade do ar completam o contexto.</p></div></article>
+          <article><span>03</span><div><strong>A placa coordena o cuidado</strong><p>A controladora compara leituras com a regra configurada e pode pedir ao relé para acionar a bomba.</p></div></article>
+          <article><span>04</span><div><strong>Você entende e acompanha</strong><p>O painel explica o status, o consumo ilustrativo e o que foi simulado, mantendo a pessoa no controle.</p></div></article>
+        </div>
+        <p class="demo-usage-disclaimer">Os limiares, valores e ligações apresentados são didáticos. Umidade de sensores baratos não é uma medida universal: calibre no substrato real e valide a necessidade da espécie antes de automatizar regas.</p>
+      </section>
+    </main>
+
+    <dialog class="plant-info-dialog" id="plant-details-dialog" aria-labelledby="plant-details-title">
+      <div class="plant-info-top">
+        <div><p class="eyebrow"><span class="sun-dot" aria-hidden="true"></span> Guia do canteiro</p><h2 id="plant-details-title">Detalhes da planta</h2></div>
+        <button class="dialog-close" type="button" aria-label="Fechar detalhes">×</button>
+      </div>
+      <div class="plant-info-body">
+        <section class="plant-info-summary">
+          <div class="plant-info-icon" id="details-plant-icon" aria-hidden="true">🌿</div>
+          <div><h3 id="details-plant-name">Manjericão</h3><p id="details-plant-description">Erva aromática · varanda</p></div>
+        </section>
+        <div class="plant-facts-grid">
+          <article><small>Próxima rega</small><strong id="details-next-watering">Em 2 dias</strong></article>
+          <article><small>Intervalo de referência</small><strong id="details-watering-interval">A cada 3 dias</strong></article>
+          <article><small>Luz</small><strong id="details-light">Sol indireto</strong></article>
+          <article><small>Colheita / floração</small><strong id="details-harvest">Em 45–60 dias</strong></article>
+          <article><small>Umidade de referência</small><strong id="details-moisture">38% no solo</strong></article>
+          <article><small>Ambiente</small><strong id="details-location">Varanda</strong></article>
+        </div>
+        <section class="plant-detail-advice"><strong>Cuidados para esta planta</strong><p id="details-care-copy"></p><small id="details-care-note"></small></section>
+        <section class="mini-garden-section">
+          <div><h3>Mini canteiro</h3><p>Escolha uma planta para voltar ao painel de leituras.</p></div>
+          <div class="mini-garden-plants" id="mini-garden-plants" role="group" aria-label="Plantas disponíveis no canteiro"></div>
+        </section>
+      </div>
+      <div class="plant-info-footer">
+        <button class="button button-green" id="back-to-dashboard" type="button">← Voltar ao painel</button>
+        <button class="plant-action-button" id="details-calendar-button" type="button">🗓️ Ver calendário de rega</button>
+      </div>
+    </dialog>
+
+    <dialog class="plant-info-dialog calendar-dialog" id="watering-calendar-dialog" aria-labelledby="watering-calendar-title">
+      <div class="plant-info-top">
+        <div><p class="eyebrow"><span class="sun-dot" aria-hidden="true"></span> Planejamento ilustrativo</p><h2 id="watering-calendar-title">Calendário de rega</h2></div>
+        <button class="dialog-close" type="button" aria-label="Fechar calendário">×</button>
+      </div>
+      <p class="calendar-plant-name" id="calendar-plant-name">Manjericão · canteiro 01</p>
+      <div class="watering-calendar-grid" id="watering-calendar-grid" aria-live="polite"></div>
+      <p class="calendar-dialog-note">As datas usam intervalos de exemplo. Confira a terra e as necessidades da espécie antes de regar.</p>
+      <div class="plant-info-footer">
+        <button class="button button-green" id="calendar-back-to-details" type="button">← Voltar aos detalhes</button>
+        <button class="automation-toggle calendar-automation" id="calendar-automation-toggle" type="button" aria-pressed="false"><span class="toggle-track"><span></span></span><span><strong>Modo automático</strong><small>Desativado · simulação</small></span></button>
+      </div>
+    </dialog>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">🌱</span><span>Jardim <em>Smart</em></span></a>
+      <p>Um cuidado de cada vez. <span>Protótipo ilustrativo · 2026</span></p>
+      <a href="index.html" class="back-top">Voltar ao início ↑</a>
+    </footer>
+  </body>
+</html>

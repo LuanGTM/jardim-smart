@@ -315,3 +315,338 @@ h1, h2, h3 { font-family: "Lilita One", sans-serif; font-weight: 400; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+.demo-hero { min-height: 390px; display: grid; grid-template-columns: 1fr 340px; align-items: center; gap: 80px; padding-top: 55px; padding-bottom: 60px; }
+.demo-header-short { display: none; }
+.demo-hero-copy { max-width: 650px; }
+.demo-hero h1 { margin-bottom: 17px; color: var(--leaf); font-size: clamp(56px, 7vw, 82px); line-height: .96; }
+.demo-hero h1 span, .demo-usage-heading h2 span { color: var(--wood); }
+.demo-hero-copy > p:not(.eyebrow) { max-width: 570px; margin-bottom: 25px; color: #594a39; font-size: 18px; line-height: 1.55; }
+.demo-note { display: flex; align-items: flex-start; gap: 14px; padding: 20px; border: 2px solid var(--outline); border-radius: 9px; background: var(--cream); box-shadow: 0 4px 0 var(--outline); }
+.demo-note > span { font-size: 27px; }
+.demo-note strong { color: var(--leaf); font-family: "Lilita One", sans-serif; font-size: 19px; font-weight: 400; }
+.demo-note p { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.demo-dashboard { padding: 64px 0 80px; background: #f5edda; background-image: radial-gradient(rgba(111,63,30,.12) .8px, transparent .8px); background-size: 16px 16px; }
+.demo-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 23px; }
+.demo-section-heading .eyebrow { margin-bottom: 9px; }
+.demo-section-heading h2 { margin: 0; color: var(--leaf); font-size: clamp(33px, 4vw, 46px); line-height: 1; }
+.demo-live { display: inline-flex; align-items: center; gap: 8px; padding: 8px 11px; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .05em; white-space: nowrap; }
+.demo-live i, .sensor-dot { width: 9px; aspect-ratio: 1; display: inline-block; border-radius: 50%; background: var(--grass); box-shadow: 0 0 0 3px #e2efd4; }
+.demo-dashboard-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr); align-items: start; gap: 22px; }
+.bed-card, .telemetry-card { min-width: 0; border: 2px solid var(--outline); border-radius: 10px; background: var(--paper); box-shadow: 0 5px 0 var(--outline); }
+.bed-card { overflow: hidden; }
+.bed-card-top, .bed-card-bottom { min-height: 43px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 17px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .07em; }
+.bed-card-top { border-bottom: 1px solid var(--line); }
+.bed-card-bottom { justify-content: flex-start; gap: 21px; border-top: 1px solid var(--line); font-size: 11px; letter-spacing: 0; }
+.bed-card-bottom span { display: inline-flex; align-items: center; gap: 7px; }
+.bed-card-bottom i { width: 12px; height: 12px; display: inline-block; border: 2px solid var(--outline); border-radius: 50%; }
+.legend-sensor { background: #d2e8b3; }
+.legend-irrigation { background: #a9d8e1; }
+.bed-illustration { position: relative; width: 100%; padding: 5px 14px 0; background: radial-gradient(ellipse at 50% 68%, rgba(225,166,93,.22), transparent 52%); }
+.bed-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.bed-illustration.is-watering .water-drop { animation: demo-water-drop .65s ease-in infinite; }
+.bed-illustration.is-watering .drop-two { animation-delay: .32s; }
+.bed-illustration.is-watering .soil-sensor { filter: drop-shadow(0 0 7px rgba(95,191,42,.85)); }
+@keyframes demo-water-drop { 0% { opacity: 0; transform: translateY(-8px); } 35% { opacity: 1; } 100% { opacity: 0; transform: translateY(14px); } }
+.diagram-label { position: absolute; z-index: 1; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid rgba(90,46,18,.4); border-radius: 8px; background: rgba(255,250,240,.95); box-shadow: 0 2px 0 rgba(90,46,18,.22); }
+.diagram-label > span:first-child { font-size: 19px; }
+.diagram-label > span:last-child { display: grid; gap: 2px; }
+.diagram-label strong { color: var(--leaf); font-size: 11px; }
+.diagram-label small { color: var(--muted); font-size: 9px; }
+.label-irrigation { top: 7%; right: 3%; }
+.label-sensor { bottom: 8%; left: 2%; }
+.diagram-plant-label { position: absolute; top: 42%; left: 49%; display: flex; align-items: center; gap: 4px; color: #fff; font-size: 12px; font-weight: 700; text-shadow: 0 1px 3px var(--outline); transform: translateX(-50%); }
+.diagram-plant-label > span { white-space: nowrap; }
+.telemetry-card { padding: 22px; }
+.telemetry-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.telemetry-heading .eyebrow { margin-bottom: 5px; font-size: 10px; }
+.telemetry-heading h3 { margin: 0; color: var(--leaf); font-size: 28px; }
+.telemetry-weather { padding: 7px 10px; border: 1px solid var(--line); border-radius: 20px; background: var(--cream); color: var(--soil); font-size: 13px; font-weight: 700; white-space: nowrap; }
+.moisture-reading { margin-top: 20px; padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: #fbf5e7; }
+.moisture-reading-top { display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 13px; font-weight: 600; }
+.moisture-reading-top strong { color: var(--leaf); font-family: "Lilita One", sans-serif; font-size: 29px; font-weight: 400; line-height: 1; }
+.moisture-reading-top strong small { padding-left: 2px; font-family: "Fredoka", sans-serif; font-size: 14px; }
+.moisture-track { height: 11px; overflow: hidden; margin-top: 11px; border: 1px solid #bcb08e; border-radius: 10px; background: #e7dcc1; }
+.moisture-track > span { width: 34%; height: 100%; display: block; border-radius: inherit; background: var(--yellow); transition: width .45s ease, background .3s ease; }
+.moisture-status { margin: 7px 0 0; color: #9a6416; font-size: 11px; font-weight: 600; }
+.moisture-status:not(.is-dry) { color: var(--grass-dark); }
+.telemetry-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 13px; }
+.telemetry-metric { min-width: 0; min-height: 69px; display: flex; align-items: center; gap: 10px; padding: 10px; border: 1px solid var(--line); border-radius: 7px; background: #fffdf7; }
+.metric-icon { width: 34px; aspect-ratio: 1; flex: 0 0 34px; display: grid; place-items: center; border-radius: 10px; font-size: 17px; }
+.metric-temp { background: #fff0d4; }
+.metric-soil-temp { background: #f3eadc; }
+.metric-water { background: #e2f3f5; }
+.metric-status { background: #edf4df; }
+.metric-signal { background: #f3eadc; }
+.telemetry-metric > div { min-width: 0; display: grid; gap: 3px; }
+.telemetry-metric small { color: var(--muted); font-size: 10px; }
+.telemetry-metric strong { min-width: 0; display: flex; align-items: center; gap: 5px; color: var(--leaf); font-size: 15px; line-height: 1.25; overflow-wrap: anywhere; }
+.telemetry-metric strong em { color: var(--muted); font-size: 11px; font-style: normal; font-weight: 500; }
+.telemetry-metric:nth-child(5) strong { font-size: 12px; }
+.sensor-dot { width: 7px; box-shadow: none; }
+.irrigation-status { display: flex; align-items: center; gap: 11px; margin-top: 13px; padding: 11px; border: 1px solid #d6cba8; border-radius: 7px; background: #fff5d5; }
+.irrigation-status-icon { width: 32px; aspect-ratio: 1; flex: 0 0 32px; display: grid; place-items: center; border-radius: 50%; background: #ffe69a; font-size: 16px; }
+.irrigation-status > div { min-width: 0; display: grid; gap: 2px; }
+.irrigation-status strong { color: var(--soil); font-size: 12px; }
+.irrigation-status small { color: var(--muted); font-size: 10px; line-height: 1.4; }
+.irrigation-status.is-dry { background: #fff0d4; }
+.irrigation-status.is-watering { border-color: #9ec9d3; background: #e5f5f7; }
+.demo-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
+.demo-controls .button { min-height: 42px; padding: 0 14px; font-size: 13px; }
+.demo-controls .button:disabled { cursor: wait; opacity: .7; }
+.plant-action-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+.plant-action-button { min-width: 0; min-height: 39px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px; background: var(--cream); color: var(--leaf); cursor: pointer; font-size: 12px; font-weight: 600; line-height: 1.3; }
+.plant-action-button:hover { border-color: var(--grass-dark); background: #eff5e6; }
+.plant-action-button:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.automation-toggle { display: inline-flex; align-items: center; gap: 8px; padding: 5px 0 5px 5px; border: 0; background: transparent; color: var(--ink); cursor: pointer; text-align: left; }
+.automation-toggle > span:last-child { display: grid; gap: 2px; }
+.automation-toggle strong { color: var(--leaf); font-size: 11px; }
+.automation-toggle small { color: var(--muted); font-size: 9px; }
+.toggle-track { width: 35px; height: 20px; display: flex; align-items: center; padding: 2px; border: 1px solid #9d947d; border-radius: 12px; background: #ded8c8; transition: background .2s ease; }
+.toggle-track > span { width: 14px; aspect-ratio: 1; border-radius: 50%; background: white; box-shadow: 0 1px 2px rgba(0,0,0,.2); transition: transform .2s ease; }
+.automation-toggle[aria-pressed="true"] .toggle-track { border-color: var(--grass-dark); background: var(--grass); }
+.automation-toggle[aria-pressed="true"] .toggle-track > span { transform: translateX(15px); }
+.telemetry-footnote { margin: 11px 0 0; color: var(--muted); font-size: 10px; line-height: 1.45; }
+.demo-usage { display: grid; grid-template-columns: .9fr 1.1fr; gap: 45px 80px; align-items: center; padding-top: 88px; padding-bottom: 88px; }
+.demo-usage-heading h2 { margin: 0 0 14px; color: var(--leaf); font-size: clamp(38px, 4.5vw, 54px); line-height: 1.02; }
+.demo-usage-heading > p:last-child { max-width: 440px; margin: 0; color: #594a39; font-size: 16px; line-height: 1.55; }
+.demo-usage-steps { display: grid; gap: 12px; }
+.demo-usage-steps article { display: flex; align-items: flex-start; gap: 16px; padding: 15px 17px; border: 1px solid var(--line); border-radius: 8px; background: var(--cream); }
+.demo-usage-steps article > span { color: var(--wood); font-family: "Lilita One", sans-serif; font-size: 24px; }
+.demo-usage-steps strong { color: var(--leaf); font-size: 15px; }
+.demo-usage-steps p { margin: 4px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.demo-usage-disclaimer { grid-column: 1 / -1; margin: 0; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .demo-hero { grid-template-columns: 1fr 280px; gap: 35px; }
+  .demo-dashboard-grid { grid-template-columns: minmax(0, 1fr) minmax(310px, .9fr); gap: 14px; }
+  .telemetry-card { padding: 17px; }
+  .diagram-label { padding: 6px 8px; }
+  .demo-usage { gap: 35px; }
+}
+
+@media (max-width: 720px) {
+  .demo-hero { min-height: 0; grid-template-columns: 1fr; gap: 26px; padding-top: 43px; padding-bottom: 44px; }
+  .demo-hero-copy > p:not(.eyebrow) { font-size: 16px; }
+  .demo-note { max-width: 480px; }
+  .demo-dashboard { padding: 48px 0 58px; }
+  .demo-dashboard-grid { grid-template-columns: 1fr; gap: 18px; }
+  .bed-card { width: min(100%, 620px); justify-self: center; }
+  .telemetry-card { width: min(100%, 620px); justify-self: center; }
+  .demo-usage { grid-template-columns: 1fr; gap: 26px; padding-top: 62px; padding-bottom: 65px; }
+  .demo-usage-disclaimer { grid-column: auto; }
+}
+
+@media (max-width: 620px) {
+  .demo-page .site-header { gap: 8px; }
+  .demo-page .main-nav { gap: 11px; }
+  .demo-page .main-nav a { font-size: 10px; }
+  .demo-page .main-nav a:first-child { display: none; }
+  .demo-page .header-cta { display: inline-block; padding: 8px 9px; font-size: 11px; }
+  .demo-header-full { display: none; }
+  .demo-header-short { display: inline; }
+  .demo-hero h1 { font-size: clamp(54px, 14vw, 70px); }
+  .demo-section-heading { align-items: flex-start; }
+  .demo-section-heading h2 { font-size: 34px; }
+  .demo-live { margin-top: 20px; padding: 7px; font-size: 8px; }
+  .bed-card-top, .bed-card-bottom { padding-right: 11px; padding-left: 11px; font-size: 9px; }
+  .bed-card-bottom { gap: 12px; font-size: 10px; }
+  .bed-illustration { padding-right: 4px; padding-left: 4px; }
+  .diagram-label { gap: 5px; padding: 5px 6px; }
+  .diagram-label > span:first-child { font-size: 14px; }
+  .diagram-label strong { font-size: 9px; }
+  .diagram-label small { font-size: 7px; }
+  .label-irrigation { top: 5%; right: 1%; }
+  .label-sensor { bottom: 5%; left: 1%; }
+  .diagram-plant-label { top: 42%; font-size: 10px; }
+  .telemetry-card { padding: 16px; }
+  .demo-controls { align-items: flex-start; flex-direction: column; }
+  .automation-toggle { padding-left: 0; }
+  .demo-page .site-footer { width: calc(100% - 32px); }
+}
+
+@media (max-width: 380px) {
+  .demo-page .brand { font-size: 18px; }
+  .demo-page .brand-mark { width: 30px; font-size: 18px; }
+  .demo-page .main-nav { display: none; }
+  .demo-page .header-cta { padding: 8px 7px; font-size: 10px; }
+  .demo-live { max-width: 92px; white-space: normal; }
+  .telemetry-metrics { gap: 7px; }
+  .telemetry-metric { gap: 7px; padding: 7px; }
+  .metric-icon { width: 29px; flex-basis: 29px; }
+  .telemetry-metric strong { font-size: 13px; }
+}
+
+@media (min-width: 381px) and (max-width: 420px) {
+  .demo-page .main-nav a:last-child { display: none; }
+}
+
+.demo-toolbar { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin: 0 0 22px; }
+.plant-picker { display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(155px, 210px); align-items: center; gap: 10px; min-width: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+.plant-picker > span:first-child { font-size: 23px; }
+.plant-picker > span:nth-child(2) { display: grid; gap: 2px; }
+.plant-picker strong { color: var(--leaf); font-size: 12px; }
+.plant-picker small { color: var(--muted); font-size: 10px; }
+.plant-picker select { min-width: 0; padding: 9px 28px 9px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--cream); color: var(--ink); font: 600 12px "Fredoka", sans-serif; }
+.view-switch { display: flex; align-items: center; gap: 7px; }
+.view-switch > span { margin-right: 4px; color: var(--muted); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.view-option { min-height: 38px; padding: 0 11px; border: 1px solid var(--line); border-radius: 7px; background: var(--paper); color: var(--leaf); cursor: pointer; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.view-option.is-selected { border-color: var(--outline); background: var(--yellow); color: var(--outline); box-shadow: 0 2px 0 var(--outline); }
+.demo-dashboard-grid[data-preview="mobile"] { max-width: 430px; grid-template-columns: minmax(0, 1fr); gap: 16px; margin-right: auto; margin-left: auto; padding: 14px; border: 2px solid #554637; border-radius: 28px; background: #e8dfcd; box-shadow: 0 6px 0 #554637; }
+.demo-dashboard-grid[data-preview="mobile"] .bed-card { border-radius: 8px; }
+.demo-dashboard-grid[data-preview="mobile"] .telemetry-card { padding: 16px; }
+.demo-dashboard-grid[data-preview="mobile"] .demo-controls { align-items: flex-start; flex-direction: column; }
+.demo-dashboard-grid[data-preview="mobile"] .diagram-label { padding: 6px; }
+.demo-dashboard-grid[data-preview="mobile"] .diagram-label strong { font-size: 10px; }
+.demo-dashboard-grid[data-preview="mobile"] .diagram-label small { font-size: 8px; }
+.demo-dashboard-grid[data-preview="mobile"] .diagram-plant-label { font-size: 10px; }
+.label-controller { top: auto; right: auto; bottom: 8%; left: 34%; }
+.legend-board { background: #6ea767; }
+.component-hotspot { color: var(--ink); cursor: pointer; text-align: left; }
+.component-hotspot:hover { filter: brightness(1.05); transform: translateY(-2px); }
+.component-layout { display: grid; grid-template-columns: minmax(240px, .75fr) minmax(0, 1.25fr); gap: 18px; margin-top: 21px; }
+.system-map { margin-top: 24px; padding: 24px; border: 2px solid var(--outline); border-radius: 10px; background: var(--paper); box-shadow: 0 5px 0 var(--outline); scroll-margin-top: 20px; }
+.system-map-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
+.system-map-heading .eyebrow { margin-bottom: 7px; }
+.system-map-heading h3 { margin: 0; color: var(--leaf); font-size: 30px; }
+.system-map-heading > p { max-width: 440px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.component-selector { display: grid; gap: 7px; align-content: start; }
+.component-chip { display: grid; grid-template-columns: 35px minmax(0, 1fr) auto; align-items: center; gap: 9px; width: 100%; padding: 9px; border: 1px solid var(--line); border-radius: 7px; background: #fffdf7; color: var(--ink); cursor: pointer; text-align: left; transition: background .16s ease, transform .16s ease, border-color .16s ease; }
+.component-chip:hover { transform: translateX(2px); border-color: var(--wood); }
+.component-chip.is-active { border-color: var(--grass-dark); background: #edf5df; box-shadow: inset 3px 0 var(--grass); }
+.component-chip > span:first-child { width: 34px; aspect-ratio: 1; display: grid; place-items: center; border-radius: 8px; background: var(--cream); font-size: 18px; }
+.component-chip > span:nth-child(2) { min-width: 0; display: grid; gap: 2px; }
+.component-chip strong { color: var(--leaf); font-size: 12px; }
+.component-chip small { color: var(--muted); font-size: 10px; }
+.component-chip > b { color: var(--wood); font-size: 18px; }
+.component-detail { min-width: 0; padding: 22px; border: 1px solid var(--line); border-radius: 8px; background: #fbf5e7; }
+.component-detail-icon { width: 48px; aspect-ratio: 1; display: grid; place-items: center; margin-bottom: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); font-size: 25px; }
+.component-detail .eyebrow { margin-bottom: 5px; font-size: 10px; }
+.component-detail h4 { margin: 0 0 8px; color: var(--leaf); font-family: "Lilita One", sans-serif; font-size: 25px; font-weight: 400; }
+.component-detail > p:not(.eyebrow) { margin: 0; color: #594a39; font-size: 14px; line-height: 1.55; }
+.component-why, .component-connection { margin-top: 15px; padding-top: 12px; border-top: 1px solid var(--line); }
+.component-why strong, .component-connection strong { color: var(--soil); font-size: 12px; }
+.component-why p, .component-connection p { margin: 4px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.wiring-flow { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 18px; padding: 13px; border: 1px solid #c9d6b3; border-radius: 8px; background: #eff5e6; }
+.wiring-flow > span { display: inline-flex; align-items: center; gap: 7px; color: var(--leaf); font-size: 11px; font-weight: 600; white-space: nowrap; }
+.wiring-flow i { width: 22px; aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; background: var(--grass); color: white; font-size: 9px; font-style: normal; }
+.wiring-flow > b { color: var(--wood); font-size: 17px; }
+.wiring-warning { margin: 13px 0 0; padding: 11px; border-left: 3px solid #d59a2e; background: #fff6df; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.wiring-warning strong { color: var(--soil); }
+.plant-care-copy { margin: 11px 0 0; padding: 9px 10px; border-left: 3px solid var(--grass); background: #eff5e6; color: var(--leaf); font-size: 11px; line-height: 1.45; }
+
+.plant path { transform-box: fill-box; transform-origin: 50% 100%; }
+.bed-illustration:not(.is-watering) .plant { animation: plant-breathe 4s ease-in-out infinite; transform-origin: 50% 100%; }
+.bed-illustration.is-watering .plant { animation: plant-watered 1.8s ease-in-out infinite; transform-origin: 50% 100%; }
+.bed-illustration.is-watering .water-flow { stroke-dasharray: 11 13; animation: water-travel .42s linear infinite; }
+.bed-illustration.is-watering .irrigation-line { animation: pipe-vibrate .16s ease-in-out infinite alternate; transform-origin: 55% 40%; }
+.bed-illustration.is-watering .soil-sensor { animation: sensor-reading .65s ease-in-out infinite alternate; }
+.bed-illustration.is-soil-wetting::after { position: absolute; content: ""; z-index: 0; left: 28%; bottom: 17%; width: 43%; height: 23%; border-radius: 50%; background: #72a8a2; opacity: .14; filter: blur(13px); animation: soil-spread .8s ease-out both; }
+.sensor-signal { transform-box: fill-box; transform-origin: center; animation: signal-pulse 2s ease-out infinite; }
+@keyframes plant-breathe { 0%, 100% { transform: scale(1) rotate(0); } 50% { transform: scale(1.018) rotate(.6deg); } }
+@keyframes plant-watered { 0%, 100% { transform: scale(1) rotate(0); } 35% { transform: scale(1.045) rotate(-1.3deg); } 70% { transform: scale(1.02) rotate(1deg); } }
+@keyframes water-travel { to { stroke-dashoffset: -48; } }
+@keyframes pipe-vibrate { from { transform: translateY(-.5px); } to { transform: translateY(.8px); } }
+@keyframes sensor-reading { from { filter: drop-shadow(0 0 1px rgba(95,191,42,.35)); } to { filter: drop-shadow(0 0 9px rgba(95,191,42,.95)); } }
+@keyframes signal-pulse { 0%, 100% { opacity: .5; } 50% { opacity: 1; } }
+@keyframes soil-spread { from { transform: scale(.2); opacity: .03; } to { transform: scale(1); opacity: .2; } }
+
+@media (max-width: 900px) {
+  .demo-toolbar { align-items: stretch; flex-direction: column; }
+  .plant-picker { max-width: 600px; }
+  .view-switch { flex-wrap: wrap; }
+  .system-map { padding: 18px; }
+  .system-map-heading { align-items: flex-start; flex-direction: column; gap: 9px; }
+}
+
+@media (max-width: 720px) {
+  .component-layout { grid-template-columns: 1fr; }
+  .component-selector { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .component-chip { grid-template-columns: 29px minmax(0, 1fr); gap: 6px; padding: 7px; }
+  .component-chip > span:first-child { width: 28px; font-size: 16px; }
+  .component-chip > b { display: none; }
+  .component-chip strong { font-size: 10px; }
+  .component-chip small { font-size: 9px; }
+  .wiring-flow { align-items: stretch; flex-direction: column; }
+  .wiring-flow > b { margin-left: 7px; transform: rotate(90deg); transform-origin: left center; }
+  .demo-dashboard-grid[data-preview="mobile"] { width: min(100%, 430px); padding: 10px; border-radius: 23px; }
+}
+
+@media (max-width: 620px) {
+  .demo-toolbar { gap: 13px; }
+  .plant-picker { grid-template-columns: auto minmax(0, 1fr); }
+  .plant-picker select { grid-column: 1 / -1; width: 100%; }
+  .view-switch { gap: 6px; }
+  .view-switch > span { width: 100%; }
+  .view-option { flex: 1; }
+  .system-map { margin-top: 18px; padding: 15px; }
+  .system-map-heading h3 { font-size: 26px; }
+  .component-selector { gap: 6px; }
+  .component-detail { padding: 16px; }
+  .label-controller { top: auto; right: auto; bottom: 8%; left: 34%; }
+  .diagram-label.label-controller { max-width: 130px; }
+  .demo-dashboard-grid[data-preview="mobile"] { width: min(100%, 390px); }
+  .demo-dashboard-grid[data-preview="mobile"] .bed-card-bottom { flex-wrap: wrap; }
+  .plant-action-buttons { grid-template-columns: 1fr; }
+  .telemetry-metric { align-items: flex-start; }
+  .telemetry-metric > div { flex: 1; }
+  .telemetry-metric strong { display: flex; flex-wrap: wrap; white-space: normal; }
+  .telemetry-metric:nth-child(5) strong { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plant, .sensor-signal, .bed-illustration.is-watering .water-flow, .bed-illustration.is-watering .irrigation-line, .bed-illustration.is-watering .soil-sensor { animation: none !important; }
+  .bed-illustration.is-soil-wetting::after { animation: none !important; }
+}
+
+.plant-info-dialog { width: min(700px, calc(100% - 28px)); max-height: min(88vh, 840px); overflow: auto; padding: 22px; border: 3px solid var(--outline); border-radius: 12px; background: var(--paper); color: var(--ink); box-shadow: 0 7px 0 var(--outline); }
+.plant-info-dialog::backdrop { background: rgba(45,48,24,.68); backdrop-filter: blur(2px); }
+.plant-info-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.plant-info-top .eyebrow { margin-bottom: 7px; }
+.plant-info-top h2 { margin: 0; color: var(--leaf); font-size: clamp(26px, 5vw, 36px); }
+.plant-info-top .dialog-close { flex: 0 0 34px; }
+.plant-info-body { display: grid; gap: 16px; margin-top: 20px; }
+.plant-info-summary { display: flex; align-items: center; gap: 13px; padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--cream); }
+.plant-info-icon { width: 52px; aspect-ratio: 1; flex: 0 0 52px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 12px; background: #fffdf7; font-size: 29px; }
+.plant-info-summary h3, .mini-garden-section h3 { margin: 0; color: var(--leaf); font-family: "Lilita One", sans-serif; font-size: 22px; font-weight: 400; }
+.plant-info-summary p, .mini-garden-section > div:first-child p { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
+.plant-facts-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.plant-facts-grid article { min-width: 0; min-height: 67px; display: grid; align-content: center; gap: 5px; padding: 10px; border: 1px solid var(--line); border-radius: 7px; background: #fffdf7; }
+.plant-facts-grid small { color: var(--muted); font-size: 10px; }
+.plant-facts-grid strong { color: var(--leaf); font-size: 13px; line-height: 1.3; overflow-wrap: anywhere; }
+.plant-detail-advice { padding: 13px; border-left: 3px solid var(--grass); background: #eff5e6; }
+.plant-detail-advice strong { color: var(--leaf); font-size: 13px; }
+.plant-detail-advice p { margin: 5px 0; color: #594a39; font-size: 12px; line-height: 1.5; }
+.plant-detail-advice small { color: var(--muted); font-size: 10px; line-height: 1.4; }
+.mini-garden-section { display: grid; gap: 10px; }
+.mini-garden-plants { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+.mini-garden-plant { min-width: 0; min-height: 51px; display: flex; align-items: center; gap: 7px; padding: 7px; border: 1px solid var(--line); border-radius: 7px; background: var(--cream); color: var(--leaf); cursor: pointer; text-align: left; }
+.mini-garden-plant > span:first-child { flex: 0 0 auto; font-size: 19px; }
+.mini-garden-plant > span:last-child { min-width: 0; font-size: 10px; font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; }
+.mini-garden-plant.is-selected { border-color: var(--grass-dark); background: #e7f2d8; box-shadow: inset 0 0 0 1px var(--grass-dark); }
+.plant-info-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 17px; padding-top: 14px; border-top: 1px solid var(--line); }
+.plant-info-footer .button { min-height: 41px; padding: 0 13px; font-size: 12px; }
+.plant-info-footer .plant-action-button { width: auto; }
+.calendar-plant-name { margin: 12px 0; color: var(--leaf); font-size: 14px; font-weight: 600; }
+.watering-calendar-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.watering-calendar-day { min-height: 60px; display: grid; align-content: center; gap: 4px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 7px; background: #fffdf7; }
+.watering-calendar-day strong { color: var(--soil); font-size: 12px; }
+.watering-calendar-day small { color: var(--muted); font-size: 10px; }
+.watering-calendar-day.is-today { border-color: var(--grass-dark); background: #eff5e6; }
+.watering-calendar-day.is-due { border-color: #d3a139; background: #fff2cc; }
+.watering-calendar-day.is-due small { color: #85570c; font-weight: 600; }
+.calendar-dialog-note { margin: 12px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+
+@media (min-width: 721px) {
+  .component-selector { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 620px) {
+  .plant-info-dialog { width: calc(100% - 20px); max-height: 92vh; padding: 15px; }
+  .plant-facts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mini-garden-plants { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .plant-info-footer { align-items: stretch; flex-direction: column; }
+  .plant-info-footer .button, .plant-info-footer .plant-action-button { width: 100%; justify-content: center; }
+  .calendar-automation { align-self: flex-start; }
+  .watering-calendar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

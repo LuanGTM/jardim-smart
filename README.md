@@ -24,6 +24,10 @@ Ajudar pessoas com rotina corrida a acompanhar os cuidados básicos das plantas.
 ## Funcionalidades
 
 - Apresentação responsiva da proposta do Jardim Smart, em telas móveis e desktop.
+- Página de demonstração com ilustração animada do canteiro, opções de visualização desktop/celular e seleção de nove plantas.
+- Detalhes da planta, mini canteiro para trocar a seleção, calendário ilustrativo de regas e controles de automatização demonstrativa.
+- Simulação de temperatura do ar e do solo, umidade do ar e do solo, consumo de água, rega manual e acionamento demonstrativo por limite de umidade.
+- Mapa interativo dos componentes, incluindo Raspberry Pi Pico W, sensores, relé, bomba e alimentação, com explicações e ligações conceituais.
 - Jardim demonstrativo em grade de nove canteiros.
 - Cadastro local de plantas pelos canteiros vazios e remoção pelo diálogo de detalhes.
 - Calendário demonstrativo de regas para os próximos sete dias.
@@ -32,7 +36,7 @@ Ajudar pessoas com rotina corrida a acompanhar os cuidados básicos das plantas.
 - Persistência das plantas e das regas no armazenamento local do navegador.
 - Layout adaptável, foco visível para navegação por teclado e respeito à preferência por movimento reduzido.
 
-Os intervalos exibidos são apenas referências do protótipo. Confira a umidade do substrato e as necessidades da espécie antes de regar.
+Os dados de sensores, temperatura e irrigação da página de demonstração são ilustrativos; os controles não acionam hardware. Os intervalos exibidos são apenas referências do protótipo. Confira a umidade do substrato e as necessidades da espécie antes de regar.
 
 ## Plantas disponíveis
 
@@ -86,8 +90,10 @@ O projeto não usa etapa de build. Para este repositório, o endereço esperado 
 ```text
 .
 ├── index.html   # Conteúdo e estrutura das seções e diálogos
+├── demonstracao.html # Simulação visual e mapa interativo dos componentes
 ├── styles.css   # Paleta visual, componentes e breakpoints responsivos
 ├── script.js    # Jardim, calendário, status de rega e armazenamento local
+├── demonstracao.js # Seleção de planta, painel, animações e interações da simulação
 └── README.md    # Documentação do projeto
 ```
 
@@ -100,6 +106,7 @@ A versão atual não solicita localização, não cria contas e não envia notif
 ## Limitações atuais
 
 - A cidade, a temperatura, a chuva e a umidade exibidas são valores ilustrativos.
+- A página de demonstração não se conecta a sensores, válvulas ou Raspberry Pi/ESP32; as temperaturas, umidades, consumo de água e acionamento da irrigação são simulados no navegador.
 - Não existe conexão com API meteorológica nem cálculo de recomendação baseado em previsão real.
 - Os intervalos de rega são sugestões fixas para a demonstração e não substituem orientação de jardinagem.
 - Os dados ficam apenas no navegador atual; não há sincronização entre dispositivos ou usuários.
